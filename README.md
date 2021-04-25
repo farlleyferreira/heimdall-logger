@@ -3,20 +3,20 @@
 ### Resumo
 
 > <p style="text-align: justify"> 
-> Este projeto foi desenvolvido como resultado de um estudo sobre sistemas assíncronos e também, da necessidade de prover um serviço flexível, que pudesse ser 
+> Este projeto foi desenvolvido como resultado de um estudo sobre sistemas assíncronos e, da necessidade de prover um serviço flexível, que pudesse ser 
 > estendido a diversos cenários e formas de aplicação, podendo ser utilizado tanto para a finalidade de log's síncronos quanto assíncronos. As funcionalidades 
 > do heimdall-logger serão mais bem discutidas nas seções pertinentes. Este módulo tem como objetivo permitir:
 > </p>
 >
 > <ul>
 > <li> Realizar logs de forma síncrona e assíncrona </li>
-> <li> Realizar loogs nos formatos LOG, TXT e JSON (Outros formatos serão implementados posteriormente) </li>
-> <li> Realizar callback do log para api's de acordo com o a necessidade do usuario </li>
+> <li> Realizar logs nos formatos LOG, TXT e JSON (Outros formatos serão implementados posteriormente) </li>
+> <li> Realizar callback do log para api's de acordo com o a necessidade do usuário</li>
 > </ul>
 >
 > <p style="text-align: justify"> 
 > Ao longo do desenvolvimento do projeto, outras integrações poderão ser adicionadas, desde que, sejam efetuadas respeitando as diretrizes
-> e padrões adotados neste projeto, esta decisão foi tomada com a finalidade de manter a integridade conceitual do mesmo.  Sinta-se a vontade para
+> e padrões adotados neste projeto, esta decisão foi tomada com a finalidade de manter a integridade conceitual do projeto.  Sinta-se à vontade para
 > contribuir com o mesmo.
 > </p>
 
@@ -27,7 +27,7 @@
 > <ol>
 > <li> Melhorar a funcionalidade de escrita para arquivos JSON. </li>
 > <li> Melhoria e aumento da profundidade dos testes da aplicação. </li>
-> <li> Implantação outros formatos de saida para os arquivos de log (Ex: XML, CSV). </li>
+> <li> Implantação outros formatos de saída para os arquivos de log (Ex: XML, CSV). </li>
 > <li> Adicionar funcionalidades de stream e funcionalidades de escrita mais personalizáveis. </li>
 > <li> Implantação de prova de conceito para providers em bancos de dados. (SQL, MongoDB, MySQL, PostgreSQl, entre outros) </li>
 > </ol>
@@ -72,7 +72,7 @@
 > make run-demo
 > ```
 >
-> Será possível observar no seu console, o log de todos os oito niveis existentes nesta lib sendo exibidos
+> Será possível observar no seu console, o log de todos os oito níveis existentes nesta lib sendo exibidos
 >
 > <i><b>Para rodar a suite de testes execute:</b></i>
 >
@@ -86,7 +86,7 @@
 > pytest --cov-report term-missing --cov=project/
 > ```
 >
-> Ou ainda, de acordo com a prferencia do desenvolvedor, os testes poderão ser executados via plugin da sua IDE
+> Ou ainda, de acordo com a preferência do desenvolvedor, os testes poderão ser executados via plugin da sua IDE
 > ou editor de códigos preferida, recomendo a [Python Test Explorer for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter) ou ainda [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer).
 
 ### Utilização
@@ -98,7 +98,7 @@
 > ```
 >
 > <p style="text-align: justify"> 
-> Após realizar a instalação, você poderá importar as funcionalidades que utilizará para criar a instância de log, de acordo com sua necessidade. Ao importar o heimdall-logger, serão expostos os seguintes modulos:
+> Após realizar a instalação, você poderá importar as funcionalidades que utilizará para criar a instância de log, de acordo com sua necessidade. Ao importar o heimdall-logger, serão expostos os seguintes módulos:
 >
 > ```python
 > from heimdall_logger import (
@@ -111,7 +111,7 @@
 > )
 > ```
 >
-> Tendo importado os modulos necessários para implantar o log no contexto desejado vamos instânciar trodas as dependencias da seguinte forma:
+> Tendo importado os módulos necessários para implantar o log no contexto desejado vamos instânciar todas as dependências da seguinte forma:
 >
 > Para gerarmos nosso arquivo de log utilizaremos o modulo FileDataLog (vide a seção Overview):
 >
@@ -123,7 +123,7 @@
 > )
 > ```
 >
-> Caso seja necessário podemos também cahamr uma API e enviar nossos dados de log para ela da seguinte forma:
+> Caso seja necessário podemos também chamar uma API e enviar nossos dados de log para ela da seguinte forma:
 >
 > ```python
 > _api_send_log = ApiSendLog(
@@ -155,7 +155,7 @@
 >
 > Perceba que não enviamos o atributo pattern em nenhuma das duas formas, isso se deve ao fato de que o padrão pré-configurado nos atende em todos os cenário, não sendo seu caso, é possível configurar um novo padrão da seguinte forma:
 >
-> padrão pré configurado:
+> padrão pré-configurado:
 >
 > ```python
 > _pattern = "[{level}][{datetime}] - {transaction} - {project_name}.{class_name}.{function_name} - {message}"
@@ -169,7 +169,7 @@
 >
 > ```
 >
-> Desde que seja respeitado o nome dos parâmetros (level, datetime, transaction, project_name, class_name, function_name e message) o log será gravado no padrão que for mais conveniente ao seu proposito. Dito isto, basta enviar na instancia do SyncLogger ou do AsyncLogger, atribunto "pattern" ao novo padrão desejado.
+> Desde que seja respeitado o nome dos parâmetros (level, datetime, transaction, project_name, class_name, function_name e message) o log será gravado no padrão que for mais conveniente ao seu proposito. Dito isto, basta enviar na instancia do SyncLogger ou do AsyncLogger, atributo "pattern" ao novo padrão desejado.
 >
 > Muito bem, configuramos nossa instancia de log com todas as possibilidades, para realizar o log, basta então chamar a função de log:
 >
@@ -201,7 +201,7 @@
 > <i><b>Extension:</b></i>
 >
 > <p style="text-align: justify"> 
->   O modulo Extension, é um enumerator que possui todos os formatos de arquivos que a biblioteca consegue processar. A medida que mais formatos forem adicionados, serão incluidos nesse modulo.
+>   O modulo Extension, é um enumerator que possui todos os formatos de arquivos que a biblioteca consegue processar. À medida que mais formatos forem adicionados, serão incluidos nesse modulo.
 >
 > ```yaml
 > Extension:
@@ -233,7 +233,7 @@
 > <i><b>FileDataLog:</b></i>
 >
 > <p style="text-align: justify"> 
-> O módulo FileDataLog, permite especificar qual extensão de arquivo de log, gostaríamos que nossos dados fossem gravados, permite ainda que especifiquemos qual o nome do arquivo de log e também em qual diretório este arquivo será gravado. Este módulo poderá ou não ser passado de acordo com o contexto de utilização dos módulos SyncLogger e AsyncLogger.
+> O módulo FileDataLog, permite especificar qual extensão de arquivo de log, gostaríamos que nossos dados fossem gravados, permite ainda que especifiquemos qual o nome do arquivo de log e em qual diretório este arquivo será gravado. Este módulo poderá ou não ser passado de acordo com o contexto de utilização dos módulos SyncLogger e AsyncLogger.
 >
 > ```python
 > log_file_data = FileDataLog(
