@@ -8,7 +8,7 @@ from heimdall_logger.handlers.handle_log import HandleLog
 
 
 @dataclass
-class LogFileData:
+class FileDataLog:
     log_path: str = "."
     log_name: str = "logfile"
     log_extension: Extension = Extension.LOG
@@ -44,7 +44,7 @@ class LogFileData:
 
 
 @dataclass
-class ApiCallerData:
+class ApiSendLog:
     api_route: str = ""
     api_method: str = ""
     api_headers: object = None

@@ -1,5 +1,5 @@
 from heimdall_logger.loggers.sync_logger import SyncLogger
-from heimdall_logger.handlers.handle_data import LogFileData, ApiCallerData
+from heimdall_logger.handlers.handle_data import FileDataLog, ApiSendLog
 
 def test_sync_logger_instance():
     sync_logger = SyncLogger(
@@ -10,7 +10,7 @@ def test_sync_logger_instance():
 
 def test_sync_logger_log_if_file_data_way():
     
-    log_file_data = LogFileData(
+    log_file_data = FileDataLog(
         log_name="logfile",
         log_path=""
     )
@@ -23,7 +23,7 @@ def test_sync_logger_log_if_file_data_way():
 
 
 def test_sync_logger_log_if_call_api_way():
-    api_caller_data = ApiCallerData(
+    api_caller_data = ApiSendLog(
         api_method="POST",
         api_route="http://www.google.com.br"        
     )

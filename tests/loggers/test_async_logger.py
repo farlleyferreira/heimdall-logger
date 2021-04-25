@@ -1,7 +1,7 @@
 import pytest
 import asyncio
 from heimdall_logger.loggers.async_logger import AsyncLogger
-from heimdall_logger.handlers.handle_data import LogFileData, ApiCallerData
+from heimdall_logger.handlers.handle_data import FileDataLog, ApiSendLog
 
 
 class TestASyncLogger(object):
@@ -22,7 +22,7 @@ class TestASyncLogger(object):
 
     def test_sync_logger_log_if_file_data_way(self):
         
-        log_file_data = LogFileData(
+        log_file_data = FileDataLog(
             log_name="logfile",
             log_path=""
         )
@@ -38,7 +38,7 @@ class TestASyncLogger(object):
         assert open("logfile.log", "r")
 
     def test_sync_logger_log_if_call_api_way(self):
-        api_caller_data = ApiCallerData(
+        api_caller_data = ApiSendLog(
             api_method="POST",
             api_route="http://www.google.com.br"        
         )

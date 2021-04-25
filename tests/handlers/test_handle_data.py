@@ -4,7 +4,7 @@ from faker import Faker
 from heimdall_logger.constants.log_output_format import Extension
 from heimdall_logger.constants.log_level import Level
 from heimdall_logger.handlers.handle_log import HandleLog
-from heimdall_logger.handlers.handle_data import ApiCallerData, LogFileData
+from heimdall_logger.handlers.handle_data import ApiSendLog, FileDataLog
 
 faker = Faker(0)
 
@@ -19,23 +19,23 @@ handle_log = HandleLog(
     )
 
 def test_sync_handle_data_file_instance():
-    log_file_data = LogFileData(
+    log_file_data = FileDataLog(
        log_extension=Extension.TXT,
        log_name="file",
        log_path=""
     )
-    assert isinstance(log_file_data, LogFileData)
+    assert isinstance(log_file_data, FileDataLog)
     
 def test_sync_handle_api_caller_instance():
-    api_caller_data = ApiCallerData(
+    api_caller_data = ApiSendLog(
        api_route="https://www.google.com",
        api_method="GET",
        api_headers={"Authorize": "1541505a4sd4asdas5d4as78d4as4d85a4sd7a4sd4as8d7a"}
     )
-    assert isinstance(api_caller_data, ApiCallerData)
+    assert isinstance(api_caller_data, ApiSendLog)
     
 def test_sync_handle_data_file_write_file():
-    log_file_data = LogFileData(
+    log_file_data = FileDataLog(
        log_extension=Extension.LOG,
        log_name="logfile",
        log_path=""
@@ -45,7 +45,7 @@ def test_sync_handle_data_file_write_file():
  
 @pytest.mark.asyncio
 async def test_async_handle_data_file_write_async_file():
-    log_file_data = LogFileData(
+    log_file_data = FileDataLog(
        log_extension=Extension.JSON,
        log_name="file",
        log_path=""
@@ -53,7 +53,7 @@ async def test_async_handle_data_file_write_async_file():
     await log_file_data.write_async_file(handle_log)   
     
 def test_sync_handle_data_file_get_full_path():
-    log_file_data = LogFileData(
+    log_file_data = FileDataLog(
        log_extension=Extension.LOG,
        log_name="logfile",
        log_path=""
@@ -63,7 +63,7 @@ def test_sync_handle_data_file_get_full_path():
 @pytest.mark.asyncio    
 async def test_async_handle_api_call_async():
     
-    api_caller_data = ApiCallerData(
+    api_caller_data = ApiSendLog(
        api_route="https://www.google.com.br",
        api_method="GET"       
     )
@@ -71,7 +71,7 @@ async def test_async_handle_api_call_async():
     await api_caller_data.call_async_api(handle_log)
 
 def test_sync_handle_api_call_sync():
-    api_caller_data = ApiCallerData(
+    api_caller_data = ApiSendLog(
        api_route="https://www.google.com",
        api_method="GET",
        api_headers={"Authorize": "1541505a4sd4asdas5d4as78d4as4d85a4sd7a4sd4as8d7a"}

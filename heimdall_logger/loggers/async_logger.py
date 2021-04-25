@@ -5,7 +5,7 @@ from heimdall_logger.utils.probe import Probe
 from heimdall_logger.constants.log_level import Level
 from heimdall_logger.format_log.template import Pattern
 from heimdall_logger.handlers.handle_log import HandleLog
-from heimdall_logger.handlers.handle_data import LogFileData, ApiCallerData
+from heimdall_logger.handlers.handle_data import FileDataLog, ApiSendLog
 
 log_pattern = Pattern().default()
 
@@ -17,8 +17,8 @@ class AsyncLogger():
     def __init__(
         self,
         project_name: str,
-        file_data: LogFileData = None,
-        api_callback: ApiCallerData = None,
+        file_data: FileDataLog = None,
+        api_callback: ApiSendLog = None,
         pattern: str = log_pattern,
     ) -> None:
         """[summary]
