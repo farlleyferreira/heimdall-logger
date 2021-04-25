@@ -123,7 +123,7 @@
 > )
 > ```
 >
-> Caso seja necessário podemos também cahamr uma API e enviar nossos dados de log para ela da seguinte forma:
+> Caso seja necessário podemos também chamar uma API e enviar nossos dados de log para ela da seguinte forma:
 >
 > ```python
 > _api_send_log = ApiSendLog(
