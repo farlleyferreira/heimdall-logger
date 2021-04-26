@@ -27,7 +27,7 @@
 > <ol>
 > <li> Melhorar a funcionalidade de escrita para arquivos JSON. </li>
 > <li> Melhoria e aumento da profundidade dos testes da aplicação. </li>
-> <li> Implantação outros formatos de saída para os arquivos de log (Ex: XML, CSV). </li>
+> <li> Implantação de outros formatos de saída para os arquivos de log (Ex: XML, CSV). </li>
 > <li> Adicionar funcionalidades de stream e funcionalidades de escrita mais personalizáveis. </li>
 > <li> Implantação de prova de conceito para providers em bancos de dados. (SQL, MongoDB, MySQL, PostgreSQl, entre outros) </li>
 > </ol>
@@ -153,7 +153,7 @@
 > )
 > ```
 >
-> Perceba que não enviamos o atributo pattern em nenhuma das duas formas, isso se deve ao fato de que o padrão pré-configurado nos atende em todos os cenário, não sendo seu caso, é possível configurar um novo padrão da seguinte forma:
+> Perceba que não enviamos o atributo pattern em nenhuma das duas formas, isso se deve ao fato de que o padrão pré-configurado nos atende em todos os cenários, não sendo seu caso, é possível configurar um novo padrão da seguinte forma:
 >
 > padrão pré-configurado:
 >
