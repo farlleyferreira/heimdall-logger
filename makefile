@@ -10,3 +10,7 @@ list-requirements:
 install-requirements:
 	pip install -r requirements.txt
 	pip install -r requirements-dev.txt
+
+
+run-demo:
+	python demo.py

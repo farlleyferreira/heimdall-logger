@@ -180,7 +180,7 @@
 > Ou então:
 >
 > ```python
-> async_logger.log(level=Level.INFO,message="MongoDB connection",transaction="end dbconnection")
+> async_logger.async_log(level=Level.INFO,message="MongoDB connection",transaction="end dbconnection")
 > ```
 >
 > No metodo log podemos enviar como parâmetro:
